@@ -8,13 +8,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={Search} />
-        <Route exact path="/search" component={Search} />
-        <Route exact path="/saved" component={Saved} />
-        <Route component={NoMatch} />
-      </Switch>
+      <div>
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={Search} />
+          <Route exact path="/search" component={Search} />
+          <Route exact path="/saved" component={Saved} />
+          <Route component={NoMatch} />
+        </Switch>
+      </div>
     </Router>
   );
 }

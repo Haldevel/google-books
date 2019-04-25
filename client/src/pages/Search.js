@@ -34,66 +34,49 @@ class Search extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
-      })
-        .then(res => this.loadBooks())
-        .catch(err => console.log(err));
-    }
+
+    API.searchBook(this.state.searchTerm).then(res => {
+      console.log(res);
+      this.setState({ returnedBooks: res.data.items })
+    })
   };
 
   render() {
     return (
-      <Container fluid>
+      <Container>
         <Row>
-          <Col size="md-6">
+          <Col size="md-12">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1>Search books</h1>
             </Jumbotron>
             <form>
               <Input
-                value={this.state.title}
+                value={this.state.searchTerm}
                 onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
+                name="searchTerm"
+                placeholder="Search term (required)"
               />
               <FormBtn
-                disabled={!(this.state.author && this.state.title)}
+                disabled={!(this.state.searchTerm)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Search books
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-6 sm-12">
+        </Row>
+        <Row>
+          <Col size="md-12 sm-12">
             <Jumbotron>
-              <h1>Books On My List</h1>
+              <h1>Results</h1>
             </Jumbotron>
-            {this.state.books.length ? (
+            {this.state.returnedBooks.length ? (
               <List>
-                {this.state.books.map(book => (
+                {this.state.returnedBooks.map(book => (
                   <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                    <strong>
+                      {book.title} by {book.author}
+                    </strong>
                   </ListItem>
                 ))}
               </List>
