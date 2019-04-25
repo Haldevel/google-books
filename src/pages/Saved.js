@@ -9,10 +9,6 @@ class Saved extends Component {
     savedBooks: []
   };
 
-  componentDidMount() {
-    
-  }
-
 
   render() {
     return (

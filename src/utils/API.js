@@ -2,19 +2,19 @@ import axios from "axios";
 
 export default {
   // Gets all books
-  getBooks: function() {
-    return axios.get("/api/books");
+  getSaved: function () {
+    return axios.get("https://google-books-server.herokuapp.com/api/books");
   },
   // Gets the book with the given id
-  searchBook: function(search) {
+  searchBook: function (search) {
     return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search);
   },
   // Deletes the book with the given id
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+  deleteBook: function (id) {
+    return axios.delete("https://google-books-server.herokuapp.com/api/books/" + id);
   },
   // Saves a book to the database
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData);
+  saveBook: function (bookData) {
+    return axios.post("https://google-books-server.herokuapp.com/api/books", bookData);
   }
 };
