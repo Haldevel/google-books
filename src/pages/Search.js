@@ -35,6 +35,9 @@ class Search extends Component {
   }
 
   render() {
+
+    let keyCount = 0;
+
     return (
       <Container>
         <Row>
@@ -67,9 +70,9 @@ class Search extends Component {
                     <ListItem
                       key={book.id}
                       title={book.volumeInfo.title}
-                      author={book.volumeInfo.authors[0]}
+                      author={book.volumeInfo.authors ? book.volumeInfo.author : "no author"}
                       synopsis={book.volumeInfo.description}
-                      cover={book.volumeInfo.imageLinks.thumbnail}>
+                      cover={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://www.fillmurray.com/200/300 "}>
                     </ListItem>
                     <SaveBtn onClick={() => this.saveBook({
                       title: book.volumeInfo.title,
@@ -78,7 +81,6 @@ class Search extends Component {
                       cover: book.volumeInfo.imageLinks.thumbnail
                     })} />
                   </div>
-
                 ))}
               </List>
             ) : (
