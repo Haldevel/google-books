@@ -4,15 +4,13 @@ import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 
-class Detail extends Component {
+class Saved extends Component {
   state = {
-    book: {}
+    savedBooks: []
   };
-  // Add code to get the book with an _id equal to the id in the route param
-  // e.g. http://localhost:3000/books/:id
-  // The book id for this route can be accessed using this.props.match.params.id
+
   componentDidMount() {
-    API.getBook(this.props.match.params.id).then(res => this.setState({ book: res.data }))
+    
   }
 
 
@@ -46,4 +44,4 @@ class Detail extends Component {
   }
 }
 
-export default Detail;
+export default Saved;

@@ -7,12 +7,10 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
-class Books extends Component {
+class Search extends Component {
   state = {
-    books: [],
-    title: "",
-    author: "",
-    synopsis: ""
+    returnedBooks: [],
+    searchTerm: ""
   };
 
   componentDidMount() {
@@ -20,16 +18,10 @@ class Books extends Component {
   }
 
   loadBooks = () => {
-    API.getBooks()
+    API.searchBook()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ returnedBooks: res.data })
       )
-      .catch(err => console.log(err));
-  };
-
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
       .catch(err => console.log(err));
   };
 
@@ -106,8 +98,8 @@ class Books extends Component {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
-            )}
+                <h3>No Results to Display</h3>
+              )}
           </Col>
         </Row>
       </Container>
@@ -115,4 +107,4 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default Search;
