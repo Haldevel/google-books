@@ -13,10 +13,6 @@ class Search extends Component {
     searchTerm: ""
   };
 
-  componentDidMount() {
-    this.loadBooks();
-  }
-
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -66,6 +62,7 @@ class Search extends Component {
               <List>
                 {this.state.returnedBooks.map(book => (
                   <ListItem
+                    key={book.id}
                     title={book.volumeInfo.title}
                     author={book.volumeInfo.authors}
                     synopsis={book.volumeInfo.description}
