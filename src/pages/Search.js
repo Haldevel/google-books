@@ -55,9 +55,6 @@ class Search extends Component {
         </Row>
         <Row>
           <Col size="md-12 sm-12">
-            <Jumbotron>
-              <h1>Results</h1>
-            </Jumbotron>
             {this.state.returnedBooks.length ? (
               <List>
                 {this.state.returnedBooks.map(book => (
