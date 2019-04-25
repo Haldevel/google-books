@@ -64,7 +64,7 @@ class Search extends Component {
                   <ListItem
                     key={book.id}
                     title={book.volumeInfo.title}
-                    author={book.volumeInfo.authors}
+                    author={book.volumeInfo.authors[0]}
                     synopsis={book.volumeInfo.description}
                     cover={book.volumeInfo.imageLinks.thumbnail}
                   />

@@ -14,7 +14,7 @@ export function List({ children }) {
 export function ListItem(props) {
   return <li className="list-group-item">
     <h3>{props.title}</h3>
-    <p>{props.authors}</p>
+    <p>{props.author}</p>
     <p>{props.synopsis}</p>
     <img src={props.cover} alt="cover"></img>
   </li>;
