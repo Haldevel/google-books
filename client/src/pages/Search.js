@@ -17,14 +17,6 @@ class Search extends Component {
     this.loadBooks();
   }
 
-  loadBooks = () => {
-    API.searchBook()
-      .then(res =>
-        this.setState({ returnedBooks: res.data })
-      )
-      .catch(err => console.log(err));
-  };
-
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
