@@ -73,11 +73,12 @@ class Search extends Component {
             {this.state.returnedBooks.length ? (
               <List>
                 {this.state.returnedBooks.map(book => (
-                  <ListItem key={book._id}>
-                    <strong>
-                      {book.title} by {book.author}
-                    </strong>
-                  </ListItem>
+                  <ListItem
+                    title={book.volumeInfo.title}
+                    author={book.volumeInfo.authors}
+                    synopsis={book.volumeInfo.description}
+                    cover={book.volumeInfo.imageLinks.thumbnail}
+                  />
                 ))}
               </List>
             ) : (
