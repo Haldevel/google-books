@@ -1,9 +1,8 @@
 {
   "name": "google-books",
-  "homepage": "https://mxweidmer.github.io/google-books/search",
+  "homepage": "https://mxweidmer.github.io/google-books/",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/",
   "dependencies": {
     "axios": "^0.18.0",
     "gh-pages": "^2.0.1",
