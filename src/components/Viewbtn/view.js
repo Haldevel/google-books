@@ -6,7 +6,7 @@ import "./style.css";
 function ViewBtn(props) {
   return (
     <a href={props.link} target="_blank">
-    <span className="view-btn" {...props} role="button" tabIndex="0">
+    <span className="nav-item btn m-2 deep orange accent-3 right" {...props} role="button" tabIndex="0">
     View
     </span>
     </a>

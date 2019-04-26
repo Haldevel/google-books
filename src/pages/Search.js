@@ -43,9 +43,9 @@ class Search extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1>(React) Google Books Search</h1>
+              <h1 className="jumbo-title">Google Book Search</h1>
             </Jumbotron>
-            <form>
+            <form className="text-orange">
               <Input
                 value={this.state.searchTerm}
                 onChange={this.handleInputChange}
@@ -84,7 +84,7 @@ class Search extends Component {
                 ))}
               </List>
             ) : (
-                <h3>No Results to Display</h3>
+                <h3 className="text-white center-align">No Results to Display</h3>
               )}
           </Col>
         </Row>
