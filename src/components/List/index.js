@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 import ViewBtn from "../Viewbtn/view"
 import SaveBtn from "../Savebtn/Save";
+// import SaveBtn from "../Savebtn/Save";
 
 // This file exports both the List and ListItem components
 
@@ -17,9 +18,10 @@ export function List({ children }) {
 export function ListItem(props) {
   return <li className="list-group-item">
     <div><h3>{props.title}</h3>
-    <div>
-    <ViewBtn link={props.link} />
-    </div>
+      <div>
+        <ViewBtn link={props.link} />
+        <SaveBtn saveButton={props.saveButton} />
+      </div>
     </div>
     <div style={{ fontSize: '1.5rem' }}>{props.author}</div>
     <div className="d-flex flex-row">

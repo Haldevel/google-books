@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
+// import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
-import SaveBtn from "../components/Savebtn/Save";
+import { Input, FormBtn } from "../components/Form";
 
 class Search extends Component {
   state = {
@@ -35,8 +34,6 @@ class Search extends Component {
   }
 
   render() {
-
-    let keyCount = 0;
 
     return (
       <Container>
@@ -72,14 +69,15 @@ class Search extends Component {
                       title={book.volumeInfo.title}
                       author={book.volumeInfo.authors ? book.volumeInfo.author : "no author"}
                       synopsis={book.volumeInfo.description}
-                      cover={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://www.fillmurray.com/200/300 "}>
+                      cover={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://www.fillmurray.com/200/300"}
+                      link={book.volumeInfo}
+                      saveButton={() => this.saveBook({
+                        title: book.volumeInfo.title,
+                        author: book.volumeInfo.authors[0],
+                        synopsis: book.volumeInfo.description,
+                        cover: book.volumeInfo.imageLinks.thumbnail
+                      })}>
                     </ListItem>
-                   {/*  <SaveBtn onClick={() => this.saveBook({
-                      title: book.volumeInfo.title,
-                      author: book.volumeInfo.authors[0],
-                      synopsis: book.volumeInfo.description,
-                      cover: book.volumeInfo.imageLinks.thumbnail
-                    })} /> */}
                   </div>
                 ))}
               </List>
