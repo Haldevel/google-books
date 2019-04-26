@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
+  // Gets all books from the heroku server
   getBooks: function() {
     return axios.get("/api/books");
   },
@@ -9,11 +9,11 @@ export default {
   searchBook: function(search) {
     return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search);
   },
-  // Deletes the book with the given id
+  // Deletes the book with the given id on our heroku hosted server
   deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+    return axios.delete("/api/books/" + id); 
   },
-  // Saves a book to the database
+  // Saves a book to the database on the heroku server
   saveBook: function(bookData) {
     return axios.post("/api/books", bookData);
   }

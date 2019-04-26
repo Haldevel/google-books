@@ -6,12 +6,26 @@ import API from "../utils/API";
 
 class Saved extends Component {
   state = {
-    savedBooks: []
+    savedBooks: [],
+    isLoaded: false,
+    error: null
   };
 
   componentDidMount() {
-    
+    this.loadBooks();
   }
+
+  loadBooks = () => {
+    API.getBooks()
+      .then(
+        res =>
+        {this.setState({ savedBooks: res.data, isLoaded: true})},
+        error => {
+          this.setState({isLoaded: true, error});
+        }
+      )
+      //.catch(err => console.log(err));
+  };
 
 
   render() {

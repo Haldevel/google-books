@@ -5,9 +5,11 @@ import "./style.css";
 // That way we don't have to define them all individually
 function ViewBtn(props) {
   return (
+    <a href={props.link} target="_blank">
     <span className="view-btn" {...props} role="button" tabIndex="0">
     View
     </span>
+    </a>
   );
 }
 

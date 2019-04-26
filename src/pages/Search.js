@@ -64,6 +64,7 @@ class Search extends Component {
                     author={book.volumeInfo.authors[0]}
                     synopsis={book.volumeInfo.description}
                     cover={book.volumeInfo.imageLinks.thumbnail}
+                    link={book.volumeInfo.infoLink}
                   />
                 ))}
               </List>
