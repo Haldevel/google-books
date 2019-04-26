@@ -35,7 +35,7 @@ class Search extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1>Search books</h1>
+              <h1>(React) Google Books Search</h1>
             </Jumbotron>
             <form>
               <Input
