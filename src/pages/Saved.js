@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
@@ -50,12 +49,12 @@ class Saved extends Component {
               <List>
                 {this.state.savedBooks.map(book => (
                   <ListItem
-                    key={book.id}
+                    key={book._id}
                     title={book.title}
                     author={book.author[0]}
                     synopsis={book.synopsis}
                     cover={book.thumbnail}
-                    //link={book.volumeInfo.infoLink}
+                   link={book.infoLink}
                   />
                 ))}
               </List>

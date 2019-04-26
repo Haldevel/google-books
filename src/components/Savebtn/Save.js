@@ -5,7 +5,7 @@ import "./style.css";
 // That way we don't have to define them all individually
 function SaveBtn(props) {
   return (
-    <button>
+    <button onClick={props.saveButton}>
       <span className="save-btn" {...props} role="button" tabIndex="0">
         Save
     </span>
