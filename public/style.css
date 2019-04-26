@@ -1,0 +1,16 @@
+.jumbo-title{
+    font-family: 'Lobster Two', cursive;
+}
+body{
+    background-image: url("https://i.imgur.com/qVEdHdU.jpg")
+}
+
+.jumbo-bg{
+    background-color: #ff3d00;
+    opacity: .65;
+    text-shadow: 2px 2px black;
+}
+
+.Otext{
+    color:#ff3d00;
+}
