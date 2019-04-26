@@ -6,18 +6,35 @@ import API from "../utils/API";
 
 class Saved extends Component {
   state = {
-    savedBooks: []
+    savedBooks: [],
+    isLoaded: false,
+    error: null
+  };
+
+  componentDidMount() {
+    this.loadBooks();
+  }
+
+  loadBooks = () => {
+    API.getBooks()
+      .then(
+        res => { this.setState({ savedBooks: res.data, isLoaded: true }) },
+        error => {
+          this.setState({ isLoaded: true, error });
+        }
+      )
+    //.catch(err => console.log(err));
   };
 
 
   render() {
     return (
-      <Container fluid>
+      <Container>
         <Row>
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {this.state.book.title} by {this.state.book.author}
+                (React) Google Books Search
               </h1>
             </Jumbotron>
           </Col>
@@ -31,8 +48,23 @@ class Saved extends Component {
           </Col>
         </Row>
         <Row>
-          <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
+          <Col size="md-12 sm-12">
+            {this.state.returnedBooks.length ? (
+              <List>
+                {this.state.returnedBooks.map(book => (
+                  <ListItem  
+                    key={book.id}
+                    title={book.volumeInfo.title}
+                    author={book.volumeInfo.authors[0]}
+                    synopsis={book.volumeInfo.description}
+                    cover={book.volumeInfo.imageLinks.thumbnail}
+                    link={book.volumeInfo.infoLink}
+                  />
+                ))}
+              </List>
+            ) : (
+                <h3>No Results to Display</h3>
+              )}
           </Col>
         </Row>
       </Container>

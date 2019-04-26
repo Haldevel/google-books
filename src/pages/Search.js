@@ -43,7 +43,7 @@ class Search extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1>Search books</h1>
+              <h1>(React) Google Books Search</h1>
             </Jumbotron>
             <form>
               <Input
@@ -74,12 +74,12 @@ class Search extends Component {
                       synopsis={book.volumeInfo.description}
                       cover={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://www.fillmurray.com/200/300 "}>
                     </ListItem>
-                    <SaveBtn onClick={() => this.saveBook({
+                   {/*  <SaveBtn onClick={() => this.saveBook({
                       title: book.volumeInfo.title,
                       author: book.volumeInfo.authors[0],
                       synopsis: book.volumeInfo.description,
                       cover: book.volumeInfo.imageLinks.thumbnail
-                    })} />
+                    })} /> */}
                   </div>
                 ))}
               </List>
