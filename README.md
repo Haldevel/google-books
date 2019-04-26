@@ -38,21 +38,7 @@ aWhere Weather API AJAX Authorization |
 :------------------:
 ![aWhere Weather API AJAX Authorization](https://github.com/ehager77/what2grow/blob/master/images/ajax.JPG) |
 
-Geolocation functions |
-:------------------:
-![Geolocation functions](https://github.com/ehager77/what2grow/blob/master/images/location.JPG) |
 
-aWhere data response manipulation |
-:------------------:
-![aWhere data response manipulation](https://github.com/ehager77/what2grow/blob/master/images/data-manipulation.JPG) |
-
-Firebase Database Population |
-:------------------:
-![Firebase Database Population](https://github.com/ehager77/what2grow/blob/master/images/firebase.JPG) |
-
-Responsive bootstrap layout sample |
-:------------------:
-![Responsive bootstrap layout sample](https://github.com/ehager77/what2grow/blob/master/images/bootstrap.JPG) |
 
 
 Technologies Used |
@@ -61,7 +47,8 @@ Technologies Used |
 * Javascript
 * CSS
 * JQuery
+* Materlize
+* Mongo
+* express
+* cors
 * Bootstrap
-* Moment.js
-* Firebase
-* HTML5 Geolocation
