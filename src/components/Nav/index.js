@@ -13,9 +13,9 @@ function Nav() {
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link
-              to="/"
+              to="/google-books/"
               className={
-                window.location.pathname === "/" || window.location.pathname === "/Search"
+                window.location.pathname === "/google-books/" || window.location.pathname === "/google-books/search"
                   ? "nav-link active"
                   : "nav-link"
               }
@@ -25,8 +25,8 @@ function Nav() {
           </li>
           <li className="nav-item">
             <Link
-              to="/Saved"
-              className={window.location.pathname === "/Saved" ? "nav-link active" : "nav-link"}
+              to="/google-books/saved"
+              className={window.location.pathname === "/google-books/saved" ? "nav-link active" : "nav-link"}
             >
               Saved 
             </Link>
