@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import SaveBtn from "../components/Savebtn/Save";
 
 class Search extends Component {
   state = {
@@ -29,7 +30,14 @@ class Search extends Component {
     })
   };
 
+  saveBook = bookData => {
+    API.saveBook(bookData).then(res => console.log(res));
+  }
+
   render() {
+
+    let keyCount = 0;
+
     return (
       <Container>
         <Row>
@@ -58,14 +66,21 @@ class Search extends Component {
             {this.state.returnedBooks.length ? (
               <List>
                 {this.state.returnedBooks.map(book => (
-                  <ListItem
-                    key={book.id}
-                    title={book.volumeInfo.title}
-                    author={book.volumeInfo.authors[0]}
-                    synopsis={book.volumeInfo.description}
-                    cover={book.volumeInfo.imageLinks.thumbnail}
-                    link={book.volumeInfo.infoLink}
-                  />
+                  <div>
+                    <ListItem
+                      key={book.id}
+                      title={book.volumeInfo.title}
+                      author={book.volumeInfo.authors ? book.volumeInfo.author : "no author"}
+                      synopsis={book.volumeInfo.description}
+                      cover={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://www.fillmurray.com/200/300 "}>
+                    </ListItem>
+                   {/*  <SaveBtn onClick={() => this.saveBook({
+                      title: book.volumeInfo.title,
+                      author: book.volumeInfo.authors[0],
+                      synopsis: book.volumeInfo.description,
+                      cover: book.volumeInfo.imageLinks.thumbnail
+                    })} /> */}
+                  </div>
                 ))}
               </List>
             ) : (

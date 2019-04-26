@@ -1,13 +1,13 @@
 {
-  "main.css": "/search/static/css/main.ebbed938.chunk.css",
-  "main.js": "/search/static/js/main.e4fdf8a5.chunk.js",
-  "main.js.map": "/search/static/js/main.e4fdf8a5.chunk.js.map",
-  "runtime~main.js": "/search/static/js/runtime~main.9c2b4df0.js",
-  "runtime~main.js.map": "/search/static/js/runtime~main.9c2b4df0.js.map",
-  "static/js/2.8110ee36.chunk.js": "/search/static/js/2.8110ee36.chunk.js",
-  "static/js/2.8110ee36.chunk.js.map": "/search/static/js/2.8110ee36.chunk.js.map",
-  "index.html": "/search/index.html",
-  "precache-manifest.0612ce391671eb905077826b4a14f535.js": "/search/precache-manifest.0612ce391671eb905077826b4a14f535.js",
-  "service-worker.js": "/search/service-worker.js",
-  "static/css/main.ebbed938.chunk.css.map": "/search/static/css/main.ebbed938.chunk.css.map"
+  "main.css": "/google-books/static/css/main.bed33a6a.chunk.css",
+  "main.js": "/google-books/static/js/main.05c840e0.chunk.js",
+  "main.js.map": "/google-books/static/js/main.05c840e0.chunk.js.map",
+  "runtime~main.js": "/google-books/static/js/runtime~main.6b0629ed.js",
+  "runtime~main.js.map": "/google-books/static/js/runtime~main.6b0629ed.js.map",
+  "static/js/2.511628c2.chunk.js": "/google-books/static/js/2.511628c2.chunk.js",
+  "static/js/2.511628c2.chunk.js.map": "/google-books/static/js/2.511628c2.chunk.js.map",
+  "index.html": "/google-books/index.html",
+  "precache-manifest.026117e06946a94e72e2de5d303a8614.js": "/google-books/precache-manifest.026117e06946a94e72e2de5d303a8614.js",
+  "service-worker.js": "/google-books/service-worker.js",
+  "static/css/main.bed33a6a.chunk.css.map": "/google-books/static/css/main.bed33a6a.chunk.css.map"
 }
