@@ -9,7 +9,7 @@ import SaveBtn from "../Savebtn/Save";
 export function List({ children }) {
   return (
     <div className="list-overflow-container black">
-      <h2 className="ml-3 my-3 text-white center-align">Results</h2>
+      <h2 className="ml-3 my-3 text-white center-align orange-shadow">Results</h2>
       <ul className="list-group mx-2">{children}</ul>
     </div>
   );

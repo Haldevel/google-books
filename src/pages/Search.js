@@ -82,7 +82,7 @@ class Search extends Component {
                 ))}
               </List>
             ) : (
-                <h3 className="text-white center-align">No Results to Display</h3>
+                <h3 className="text-white center-align orange-shadow">No Results to Display</h3>
               )}
           </Col>
         </Row>

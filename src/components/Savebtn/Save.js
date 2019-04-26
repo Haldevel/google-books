@@ -5,9 +5,10 @@ import "./style.css";
 // That way we don't have to define them all individually
 function SaveBtn(props) {
   return (
-    <button onClick={props.saveButton}>
-      <span className="save-btn" {...props} role="button" tabIndex="0">
-        Save
+    <button className="nav-item btn m-2 deep orange accent-3 right" onClick={props.saveButton}>
+          
+    <span {...props} role="button" tabIndex="0">
+    Save
     </span>
     </button>
   );
