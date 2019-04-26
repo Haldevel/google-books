@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import {List, ListItem} from "../components/List/index"
-
+import { List, ListItem } from "../components/List";
 
 class Saved extends Component {
   state = {
@@ -18,7 +16,7 @@ class Saved extends Component {
   }
 
   loadBooks = () => {
-    API.getBooks()
+    API.getSaved()
       .then(
         res => { this.setState({ savedBooks: res.data, isLoaded: true }) },
         error => {
@@ -43,24 +41,20 @@ class Saved extends Component {
         </Row>
         <Row>
           <Col size="md-10 md-offset-1">
-            <article>
-              <h1>Synopsis</h1>
-              <p>{this.state.book.synopsis}</p>
-            </article>
           </Col>
         </Row>
         <Row>
           <Col size="md-12 sm-12">
-            {this.state.returnedBooks.length ? (
+            {this.state.savedBooks.length ? (
               <List>
-                {this.state.returnedBooks.map(book => (
-                  <ListItem  
-                    key={book.id}
-                    title={book.volumeInfo.title}
-                    author={book.volumeInfo.authors[0]}
-                    synopsis={book.volumeInfo.description}
-                    cover={book.volumeInfo.imageLinks.thumbnail}
-                    link={book.volumeInfo.infoLink}
+                {this.state.savedBooks.map(book => (
+                  <ListItem
+                    key={book._id}
+                    title={book.title}
+                    author={book.author[0]}
+                    synopsis={book.synopsis}
+                    cover={book.thumbnail}
+                   link={book.infoLink}
                   />
                 ))}
               </List>

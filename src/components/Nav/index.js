@@ -14,9 +14,9 @@ function Nav() {
           <li className="nav-item btn m-2 orange accent-3">
           Search
             <Link
-              to="/"
+              to="/google-books/"
               className={
-                window.location.pathname === "/" || window.location.pathname === "/Search"
+                window.location.pathname === "/google-books/" || window.location.pathname === "/google-books/search"
                   ? "nav-link active"
                   : "nav-link"
               }
@@ -27,8 +27,8 @@ function Nav() {
           <li className="nav-item btn m-2 deep orange accent-3">
           Saved
             <Link
-              to="/Saved"
-              className={window.location.pathname === "/Saved" ? "nav-link active" : "nav-link"}
+              to="/google-books/saved"
+              className={window.location.pathname === "/google-books/saved" ? "nav-link active" : "nav-link"}
             >
                
             </Link>
