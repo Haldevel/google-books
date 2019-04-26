@@ -5,13 +5,14 @@ import { Link } from "react-router-dom"
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/">
+    <nav className="navbar navbar-expand-lg navbar-light grey darken-4">
+      <Link className="navbar-brand text-white center-align" to="/">
         Google Books
       </Link>
       <div>
         <ul className="navbar-nav">
-          <li className="nav-item">
+          <li className="nav-item btn m-2 orange accent-3">
+          Search
             <Link
               to="/google-books/"
               className={
@@ -20,15 +21,16 @@ function Nav() {
                   : "nav-link"
               }
             >
-              Search
+              
             </Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item btn m-2 deep orange accent-3">
+          Saved
             <Link
               to="/google-books/saved"
               className={window.location.pathname === "/google-books/saved" ? "nav-link active" : "nav-link"}
             >
-              Saved 
+               
             </Link>
           </li>
         </ul>

@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
+// import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
-import SaveBtn from "../components/Savebtn/Save";
+import { Input, FormBtn } from "../components/Form";
 
 class Search extends Component {
   state = {
@@ -36,16 +35,14 @@ class Search extends Component {
 
   render() {
 
-    let keyCount = 0;
-
     return (
       <Container>
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1>(React) Google Books Search</h1>
+              <h1 className="jumbo-title">Google Book Search</h1>
             </Jumbotron>
-            <form>
+            <form className="text-orange">
               <Input
                 value={this.state.searchTerm}
                 onChange={this.handleInputChange}
@@ -72,19 +69,20 @@ class Search extends Component {
                       title={book.volumeInfo.title}
                       author={book.volumeInfo.authors ? book.volumeInfo.author : "no author"}
                       synopsis={book.volumeInfo.description}
-                      cover={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://www.fillmurray.com/200/300 "}>
+                      cover={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://www.fillmurray.com/200/300"}
+                      link={book.volumeInfo}
+                      saveButton={() => this.saveBook({
+                        title: book.volumeInfo.title,
+                        author: book.volumeInfo.authors[0],
+                        synopsis: book.volumeInfo.description,
+                        cover: book.volumeInfo.imageLinks.thumbnail
+                      })}>
                     </ListItem>
-                   {/*  <SaveBtn onClick={() => this.saveBook({
-                      title: book.volumeInfo.title,
-                      author: book.volumeInfo.authors[0],
-                      synopsis: book.volumeInfo.description,
-                      cover: book.volumeInfo.imageLinks.thumbnail
-                    })} /> */}
                   </div>
                 ))}
               </List>
             ) : (
-                <h3>No Results to Display</h3>
+                <h3 className="text-white center-align orange-shadow">No Results to Display</h3>
               )}
           </Col>
         </Row>
