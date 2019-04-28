@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light grey darken-4">
-      <Link className="navbar-brand text-white center-align" to="/">
+      <Link className="navbar-brand text-white center-align" to="/google-books/">
         Google Books
       </Link>
       <div>
