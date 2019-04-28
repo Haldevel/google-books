@@ -5,11 +5,11 @@ import "./style.css";
 // That way we don't have to define them all individually
 function DeleteBtn(props) {
   return (
-    <a href={props.link} target="_blank">
-    <span className="nav-item btn m-2 deep orange accent-3 right" {...props} role="button" tabIndex="0">
+    <button onClick={props.deleteButton}>
+      <span className="nav-item btn m-2 deep orange accent-3 right" {...props} role="button" tabIndex="0">
     Delete
     </span>
-    </a>
+    </button>
   );
 }
 

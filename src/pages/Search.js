@@ -10,7 +10,8 @@ import { Input, FormBtn } from "../components/Form";
 class Search extends Component {
   state = {
     returnedBooks: [],
-    searchTerm: ""
+    searchTerm: "",
+    pg: "Search"
   };
 
   handleInputChange = event => {
@@ -65,6 +66,7 @@ class Search extends Component {
                 {this.state.returnedBooks.map(book => (
                   <div>
                     <ListItem
+                      pg={this.state.pg}
                       key={book.id}
                       title={book.volumeInfo.title}
                       author={book.volumeInfo.authors ? book.volumeInfo.author : "no author"}
