@@ -6,11 +6,10 @@ import "./style.css";
 function DeleteBtn(props) {
   return (
     <button onClick={props.deleteButton}>
-      <span className="btn btn-danger" {...props} role="button" tabIndex="0">
-        Delete
+      <span className="nav-item btn m-2 deep orange accent-3 right" {...props} role="button" tabIndex="0">
+    Delete
     </span>
     </button>
-
   );
 }
 

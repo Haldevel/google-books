@@ -10,14 +10,15 @@ import DeleteBtn from "../DeleteBtn/index";
 export function List({ children }) {
 
   return (
-    <div className="list-overflow-container">
-      <h2 className="ml-3 my-3">Search Results</h2>
+    <div className="list-overflow-container black">
+      <h2 className="ml-3 my-3 text-white center-align orange-shadow">Results</h2>
       <ul className="list-group mx-2">{children}</ul>
     </div>
   )
 }
 
 export function ListItem(props) {
+
   var button;
   if (props.pg === "Search") {
     (
@@ -28,19 +29,19 @@ export function ListItem(props) {
     button = <DeleteBtn deleteButton={props.deleteButton} />
   }
 
-  return <li className="list-group-item">
-    <div><h3>{props.title}</h3>
+  return <li className="list-group-item black">
+    <div><h3 className="Otext">{props.title}</h3>
       <div>
         <ViewBtn link={props.link} />
         {button}
       </div>
     </div>
-    <div style={{ fontSize: '1.5rem' }}>{props.author}</div>
+    <div className="Otext" style={{ fontSize: '1.5rem' }}>{props.author}</div>
     <div className="d-flex flex-row">
       <div className="p-2">
         <img src={props.cover} alt="cover" />
       </div>
-      <div>{props.synopsis}</div>
+      <div className="Otext">{props.synopsis}</div>
     </div>
   </li>;
 }

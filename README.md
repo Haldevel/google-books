@@ -10,49 +10,37 @@ Collaborators |
 * Max Weidmer
 
 ## Description
-### This is a web application designed to help users to search and look for book using the google books api. You can search for books and then save the book info 
+### This is a web application designed to help users to search and look for book using the Google books API. You can search for books and then save the book info. For this project we used materialize and bootstrap for styling. Express and mongo were used for handling the data and routing. 
 
-### 
+### For this app we choose to follow a decouple architecture. A decoupled architecture is a framework for complex work that allows components to remain completely autonomous and unaware of each other. This allows for a clear process in where both front and backend can work succinctly to make a fully functional app.
 
 ## Screenshots/GIFS
 
 Search Page |
 :------------------:
-![Splash Page]() |
+![Search Page](./images/SearchPage.PNG) |
 
-Main user interface |
+Save Page |
 :------------------:
-![Main user interface](https://github.com/ehager77/what2grow/blob/master/images/main.JPG) |
+![Save Page](./images/savedpage.PNG) |
 
-Search autocomplete |
+
+404 Error |
 :------------------:
-![Search autocomplete](https://github.com/ehager77/what2grow/blob/master/images/auto.gif) |
+![error Page](./images/404error.PNG) |
+
 
 ## Important Code Details
 
-Variable declaration |
+Search  |
 :------------------:
-![Variable declaration](https://github.com/ehager77/what2grow/blob/master/images/variables.JPG) |
+![Search](./images/search.PNG) |
 
-aWhere Weather API AJAX Authorization |
+Listing item|
 :------------------:
-![aWhere Weather API AJAX Authorization](https://github.com/ehager77/what2grow/blob/master/images/ajax.JPG) |
+![Listing Item](./images/search.PNG) |
 
-Geolocation functions |
-:------------------:
-![Geolocation functions](https://github.com/ehager77/what2grow/blob/master/images/location.JPG) |
 
-aWhere data response manipulation |
-:------------------:
-![aWhere data response manipulation](https://github.com/ehager77/what2grow/blob/master/images/data-manipulation.JPG) |
-
-Firebase Database Population |
-:------------------:
-![Firebase Database Population](https://github.com/ehager77/what2grow/blob/master/images/firebase.JPG) |
-
-Responsive bootstrap layout sample |
-:------------------:
-![Responsive bootstrap layout sample](https://github.com/ehager77/what2grow/blob/master/images/bootstrap.JPG) |
 
 
 Technologies Used |
@@ -61,7 +49,8 @@ Technologies Used |
 * Javascript
 * CSS
 * JQuery
+* Materlize
+* Mongo
+* express
+* cors
 * Bootstrap
-* Moment.js
-* Firebase
-* HTML5 Geolocation
