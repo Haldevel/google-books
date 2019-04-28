@@ -5,9 +5,12 @@ import "./style.css";
 // That way we don't have to define them all individually
 function DeleteBtn(props) {
   return (
-    <span className="btn btn-danger" {...props} role="button" tabIndex="0">
-      Delete
+    <button onClick={props.deleteButton}>
+      <span className="btn btn-danger" {...props} role="button" tabIndex="0">
+        Delete
     </span>
+    </button>
+
   );
 }
 

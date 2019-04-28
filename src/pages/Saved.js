@@ -4,11 +4,14 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { List, ListItem } from "../components/List";
 
+
 class Saved extends Component {
   state = {
     savedBooks: [],
     isLoaded: false,
-    error: null
+    error: null,
+    pg: "Saved",
+    updateThing: 0
   };
 
   componentDidMount() {
@@ -25,6 +28,18 @@ class Saved extends Component {
       )
     //.catch(err => console.log(err));
   };
+
+  deleteBook = id => {
+    API.deleteBook(id).then(
+      res => {
+        const newArr = this.state.savedBooks.filter( el => el._id !== id);
+        this.setState({savedBooks : newArr});
+      }
+      //res => console.log(res)
+      );
+
+      
+  }
 
 
   render() {
@@ -54,7 +69,9 @@ class Saved extends Component {
                     author={book.author[0]}
                     synopsis={book.synopsis}
                     cover={book.thumbnail}
-                   link={book.infoLink}
+                   link={book.link}
+                   deleteButton={() => this.deleteBook(book._id)}
+                   pg={this.state.pg}
                   />
                 ))}
               </List>
