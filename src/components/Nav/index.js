@@ -12,7 +12,6 @@ function Nav() {
       <div>
         <ul className="navbar-nav">
           <li className="nav-item btn m-2 orange accent-3">
-          Search
             <Link
               to="/google-books/"
               className={
@@ -21,16 +20,15 @@ function Nav() {
                   : "nav-link"
               }
             >
-              
+              Search
             </Link>
           </li>
           <li className="nav-item btn m-2 deep orange accent-3">
-          Saved
             <Link
               to="/google-books/saved"
               className={window.location.pathname === "/google-books/saved" ? "nav-link active" : "nav-link"}
             >
-               
+              Saved
             </Link>
           </li>
         </ul>

@@ -77,7 +77,8 @@ class Search extends Component {
                         title: book.volumeInfo.title,
                         author: book.volumeInfo.authors[0],
                         synopsis: book.volumeInfo.description,
-                        cover: book.volumeInfo.imageLinks.thumbnail
+                        cover: book.volumeInfo.imageLinks.thumbnail,
+                        link: book.volumeInfo.infoLink
                       })}>
                     </ListItem>
                   </div>

@@ -68,7 +68,7 @@ class Saved extends Component {
                     title={book.title}
                     author={book.author[0]}
                     synopsis={book.synopsis}
-                    cover={book.thumbnail}
+                    cover={book.cover}
                    link={book.link}
                    deleteButton={() => this.deleteBook(book._id)}
                    pg={this.state.pg}
